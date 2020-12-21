@@ -1,0 +1,38 @@
+{
+  "name": "express-portfolio",
+  "version": "1.0.0",
+  "description": "Backend for hosting my portfolio site.",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test mocha --recursive --exit",
+    "dev": "NODE_ENV=dev node index.js",
+    "prod": "NODE_ENV=prod node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DawnSheedy/open-twitch-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DawnSheedy/open-twitch-bot/issues"
+  },
+  "homepage": "https://github.com/DawnSheedy/open-twitch-bot#readme",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "cookie-session": "^1.4.0",
+    "express": "^4.17.1",
+    "helmet": "^4.2.0",
+    "hpp": "^0.2.3",
+    "lodash": "^4.17.20",
+    "nedb": "^1.8.0",
+    "passport": "^0.4.1",
+    "passport-google-oauth": "^2.0.0",
+    "passport-jwt": "^4.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^8.2.1"
+  }
+}
