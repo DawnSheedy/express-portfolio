@@ -41,7 +41,7 @@ module.exports = (server) => {
 
     middleware(app);
 
-    app.use('/auth', authRoutes)
+    app.use('/auth', authRoutes.router)
 
     app.get('/', (req, res) => {
         res.send('Home')

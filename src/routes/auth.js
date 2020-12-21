@@ -77,4 +77,4 @@ router.get('/google/callback', (req, res, next) => {
     })(req, res, next);
 });
 
-module.exports = router;
+module.exports = { router: router, middleware: authOnly };
