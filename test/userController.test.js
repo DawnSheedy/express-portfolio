@@ -9,7 +9,6 @@ chai.should()
 let db = require('../src/controllers/datastore')
 
 let userController = require('../src/controllers/users')
-const users = require('../src/controllers/users')
 
 beforeEach(function () {
     return new Promise(async (resolve) => {

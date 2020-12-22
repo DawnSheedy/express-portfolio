@@ -14,6 +14,7 @@ if (process.env.NODE_ENV == 'test') {
 
 // No duplicate commands.
 db.users.ensureIndex({ fieldName: 'id', unique: true })
+db.projects.ensureIndex({ fieldName: 'id', unique: true })
 
 //Clear
 db.clear = function () {
