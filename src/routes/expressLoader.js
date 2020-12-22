@@ -9,6 +9,7 @@ module.exports = (server) => {
     const hpp = require('hpp')
     const middleware = require('./middleware')
     const authRoutes = require('./auth')
+    const projectRoutes = require('./projects')
     const config = require('./../../config')
 
     const app = express()
@@ -43,6 +44,8 @@ module.exports = (server) => {
 
     app.use('/auth', authRoutes.router)
 
+    app.use('/projects', projectRoutes)
+
     app.get('/', (req, res) => {
         res.send('Home')
     })
@@ -50,6 +53,6 @@ module.exports = (server) => {
     //TODO: API Endpoints
 
     server.listen(port, () => {
-        console.log('Bot API running on port '+port)
+        console.log('Portfolio running on port '+port)
     })
 }
