@@ -1,2 +1,2 @@
 # express-portfolio
- Portfolio backend, written in node using exoress.
+ Portfolio backend, written in node using express.
