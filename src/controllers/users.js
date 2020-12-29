@@ -26,10 +26,8 @@ users.createOrFind = (userObj = null) => {
 }
 
 users.create = (attributes = {}) => {
-    //Create user object from attributes
     let user = new User(attributes)
 
-    //Insert into db, promise will be rejected if entry already exists or upon other error.
     return new Promise((resolve, reject) => {
         if (!attributes.id) reject("No id provided.")
         db.users.insert(user, function (err, newDoc) {
