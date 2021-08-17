@@ -62,4 +62,13 @@ describe('Project Controller', function () {
             return projectController.delete('sample-4').should.be.rejected
         })
     })
+    describe('#.findAll()', function () {
+        it('should resolve with an array containing all of the docs', function () {
+            return projectController.findAll().should.eventually.have.length(3)
+        })
+        it('should return an empty array if no docs exist or if an error occurs', function () {
+            db.clear()
+            return projectController.findAll().should.eventually.have.length(0)
+        })
+    })
 })

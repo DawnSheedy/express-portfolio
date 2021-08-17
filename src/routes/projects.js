@@ -4,7 +4,9 @@ const router = express.Router();
 
 const projectController = require('./../controllers/projects')
 
-//Get array of projects
+/**
+ * Get project with corresponding ID. No auth required.
+ */
 router.get('/', function (req, res) {
     projectController.find(req.params.id)
         .then(project => {
@@ -17,7 +19,9 @@ router.get('/', function (req, res) {
         })
 })
 
-//Create new project
+/**
+ * Create new project. Auth required.
+ */
 router.put('/', auth, function (req, res) {
     projectController.create({ id: req.params.id, title: req.params.title, description: req.params.description, url: req.parmas.url, headerImageURL: req.params.headerImageURL, year: req.params.year })
         .then(project => {
@@ -30,7 +34,9 @@ router.put('/', auth, function (req, res) {
         })
 })
 
-//Delete project
+/**
+ * Delete project, auth required.
+ */
 router.delete('/', auth, function (req, res) {
     projectController.delete(req.params.id)
         .then(project => {

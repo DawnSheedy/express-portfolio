@@ -4,7 +4,11 @@ const ProjectModel = require('./../models/project')
 let projects = {}
 
 
-//Create
+/**
+ * @function create Creates a new project object based on the model and inserts it into the datastore.
+ * @param {*} attributes Object containing project information, based on the ProjectModel.
+ * @returns Promise that will resolve with the new project DB document or reject if the document fails to insert.
+ */
 projects.create = (attributes = {}) => {
     //Create user object from attributes
     let project = new ProjectModel(attributes)
@@ -17,6 +21,22 @@ projects.create = (attributes = {}) => {
                 reject(err)
             } else {
                 resolve(newDoc)
+            }
+        })
+    })
+}
+
+/**
+ * @function projects.findAll Returns array with all projects that exist in the datastore.
+ * @returns Promise that will resolve either with an empty array (if no projects exist) or an array of project data.
+ */
+projects.findAll = () => {
+    return new Promise((resolve, reject) => {
+        db.projects.find({}, function (err, docs) {
+            if (err || docs == null) {
+                resolve([])
+            } else {
+                resolve(docs)
             }
         })
     })

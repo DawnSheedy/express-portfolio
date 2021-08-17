@@ -1,3 +1,7 @@
+/*
+    Datastore Setup
+    We're using NeDB since we're not operating at any scale.
+*/
 const Datastore = require('nedb')
 let db = {}
 

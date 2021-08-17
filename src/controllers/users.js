@@ -1,8 +1,14 @@
+/*
+    User Controller
+    Manages users.
+*/
+
 const db = require('./datastore.js')
 let User = require('../models/user.js')
 
 let users = {}
 
+//Pulled from stackoverflow
 function makeid(length) {
     var result = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
