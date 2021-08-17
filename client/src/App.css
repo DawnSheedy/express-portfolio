@@ -1,38 +1,181 @@
-.App {
-  text-align: center;
+.License-text {
+  line-height: 1;
+  padding:0px;
+  margin:0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Headline-container {
+  height: 100vh;
+  width: 100vw;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.App-headline {
+  font-size: 60px;
+  display: inline-block;
+  line-height: 1.0;
+}
+
+.App-subline {
+  margin-top: -8px;
+  margin-bottom: 6px;
+  font-size: 30px;
+  opacity: .5;
+  display: inline-block;
+  line-height: 1;
+}
+
+.vl {
+  border-left: 1.5px solid #e4e4e4;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  animation-name: divider-entry;
+  animation-duration: .75s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+@keyframes divider-entry {
+  0% {
+    opacity: 0;
+    height: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  100% {
+    opacity: 1;
+    height: 14px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
+.entry-anim {
+  opacity: 0;
+  animation-name: slide-in;
+  animation-duration: .75s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+.expand-anim {
+  opacity: 0;
+  animation-name: expand;
+  animation-duration: .75s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+.welcome-text {
+  display: inline-block;
+  animation-name: shrink-out;
+  animation-delay: 1s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  overflow: hidden;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.title-block {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.social-span {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.App-body {
+  background-color: #2a2630 !important;
+  color: #e4e4e4;
+}
+
+.App-welcome {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-width: 100vw;
+}
+
+.App-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+a {
+  color: #c7a5cf;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #e4e4e4;
+  animation-name: link-hover;
+  animation-duration: .5s;
+  animation-timing-function: ease-in-out;
+  text-decoration: none;
+}
+
+hr {
+  border-top: 1px #e4e4e4 solid;
+  margin-bottom: 14px;
+  margin-left: 0;
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expand {
+  0% {
+    max-width: 0%;
+    opacity: 0;
+  }
+  100% {
+    max-width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes shrink-out {
+  0% {
+    max-width: 100%;
+    opacity: 100%;
+  }
+  50% {
+    opacity: 100%;
+    padding-right: 10px;
+  }
+  100% {
+    max-width: 0%;
+    opacity: 0%;
+    padding-right: 0px;
+  }
+}
+
+@keyframes link-hover {
   from {
-    transform: rotate(0deg);
+    color: #c7a5cf;
   }
   to {
-    transform: rotate(360deg);
+    color: #e4e4e4;
   }
 }

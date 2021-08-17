@@ -1,10 +1,10 @@
 import './App.css';
 import Initialization from './components/initialization';
-import Login from './components/login'
+import Home from './components/home';
 import axios from 'axios'
 
 import React, { useState, useEffect } from 'react';
-import ModZone from './components/modzone';
+import AuthZone from './components/authzone';
 
 function App() {
   const [auth, setAuth] = useState(null)
@@ -16,15 +16,12 @@ function App() {
   }, [])
 
   if (auth === null) {
-    // Default state where no session exists
     return <Initialization />
   }
   if (auth) {
-    //Zone for when we're logged in
-    return <ModZone user={auth} />
+    return <AuthZone user={auth} />
   }
-  //Normal userland
-  return <Login />
+  return <Home />
 }
 
 export default App;
